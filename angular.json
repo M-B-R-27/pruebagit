@@ -5,7 +5,8 @@
   "projects": {
     "app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -31,7 +32,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/theme/global.scss", "src/theme/variables.scss"],
             "scripts": []
           },
           "configurations": {
