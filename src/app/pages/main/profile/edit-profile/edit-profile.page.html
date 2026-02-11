@@ -1,0 +1,60 @@
+<app-header  [showMenu]="true" title="Editar Perfil"></app-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <!-- Avatar mejorado -->
+    <div class="avatar-section">
+      <ion-avatar class="large-avatar">
+        @if (user()?.image) {
+          <img [src]="user()!.image" />
+        }
+        @if (!user()?.image) {
+          <ion-icon class="empty-icon" name="person-circle-outline"></ion-icon>
+        }
+      </ion-avatar>
+
+      <ion-button 
+        class="change-photo-btn" 
+        (click)="takeImage()" 
+        mode="ios" 
+        expand="block"
+        fill="outline"
+        tabindex="-1">
+        <ion-icon slot="start" name="camera-outline"></ion-icon>
+        Cambiar foto de perfil
+      </ion-button>
+    </div>
+
+    <!-- Nombre -->
+    <app-custom-input
+      [control]="form.controls.name"
+      [label]="'Nombre'"
+      [icon]="'person-outline'"
+      [type]="'text'"
+      autocomplete="off">
+    </app-custom-input>
+
+    <!-- Correo -->
+    <app-custom-input
+      [control]="form.controls.email"
+      [label]="'Correo'"
+      [icon]="'mail-outline'"
+      [type]="'email'"
+      autocomplete="off">
+    </app-custom-input>
+
+    <!-- Botón guardar -->
+    <ion-button
+      expand="block"
+      class="ion-margin-top"
+      [disabled]="form.invalid || loading"
+      type="submit">
+      <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+      Guardar Cambios
+    </ion-button>
+
+  </form>
+
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AdminIonic</string>
+    <string name="title_activity_main">AdminIonic</string>
+    <string name="package_name">com.adminionic.app</string>
+    <string name="custom_url_scheme">com.adminionic.app</string>
+</resources>

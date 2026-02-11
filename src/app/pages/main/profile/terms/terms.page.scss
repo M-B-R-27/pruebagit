@@ -1,0 +1,65 @@
+.terms-header {
+  text-align: center;
+  padding: 20px 0 30px;
+  border-bottom: 1px solid var(--ion-color-light);
+  margin-bottom: 24px;
+
+  ion-icon {
+    font-size: 52px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--ion-color-dark);
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+}
+
+.terms-body {
+  .section {
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+      margin: 0 0 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ion-color-dark);
+      margin: 0;
+    }
+  }
+}
+
+.terms-footer {
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 8px;
+  border-top: 1px solid var(--ion-color-light);
+
+  ion-icon {
+    font-size: 36px;
+    display: block;
+    margin: 0 auto 8px;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--ion-color-medium);
+    margin: 0;
+    font-style: italic;
+  }
+}

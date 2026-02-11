@@ -1,0 +1,8 @@
+{
+  "appId": "com.adminionic.app",
+  "appName": "AdminIonic",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

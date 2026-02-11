@@ -1,0 +1,44 @@
+
+ <app-header [showMenu]="true" title="Perfil"   ></app-header>
+<ion-content *ngIf="user()"  class="ion-padding-top  ion-text-center" >
+      <div class="avatar-container"> 
+       <ion-avatar>
+    @if (user()?.image) {
+      <img [src]="user()!.image" />
+    }
+    @if (!user()?.image) {
+      <ion-icon class="empty-icon" name="person-circle-outline"></ion-icon>
+    }
+  </ion-avatar>
+      
+  <ion-button class="photo-btn" (click)="takeImage()" mode="ios" size="small" shape="round">
+  <ion-icon name="camera-outline"></ion-icon>
+  </ion-button>
+
+      </div>
+
+
+<h2>{{user()!.name}}</h2>
+<div class="clasificacion" >Vendedor</div>
+
+<ion-item  button detail (click)="utilsSvc.routerLink('/main/edit-profile')" >
+  <ion-icon color="primary"  slot="start" name="person-outline"></ion-icon>
+  <ion-label>Editar Perfil</ion-label>
+</ion-item>
+
+<ion-item button detail (click)="utilsSvc.routerLink('/main/terms')" >
+  <ion-icon color="primary"  slot="start" name="document-outline"></ion-icon>
+  <ion-label>Términos & Condiciones</ion-label>
+</ion-item>
+
+
+</ion-content>
+<!-- Mensaje si no hay usuario -->
+
+<ion-content *ngIf="!user()" class="ion-padding ion-text-center">
+  <div style="margin-top: 50%;">
+    <ion-icon name="alert-circle-outline" style="font-size: 64px; color: var(--ion-color-warning);"></ion-icon>
+    <h3>No se encontró información del usuario</h3>
+    <p>Por favor, inicia sesión nuevamente</p>
+  </div>
+</ion-content>

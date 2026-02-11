@@ -6,7 +6,7 @@
     <form [formGroup] ="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()" >
 
       <app-logo></app-logo>
-
+    <!-- Email -->
     <app-custom-input
     autocomplete="email"
     icon="mail-outline" 
@@ -19,7 +19,7 @@
       <div *ngIf="form.controls.email.errors['required']" >El correo es requerido</div>
       <div *ngIf="form.controls.email.errors['email']" >El correo no es válido</div>
     </div>
-
+  <!-- Password -->
   <app-custom-input 
   [control]= "$any(form.get('password'))"
   type="password"

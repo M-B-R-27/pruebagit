@@ -1,25 +1,29 @@
-import { ApplicationConfig, provideZoneChangeDetection,importProvidersFrom  } from '@angular/core';
+// Importa las funciones principales de configuración de Angular
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+
+// Importa la configuración del router
 import { provideRouter } from '@angular/router';
 import { RouteReuseStrategy } from '@angular/router';
-import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { environment } from '../environments/environment';
 
+// Importa los providers de Ionic
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+
+// Importa las rutas de la aplicación
 import { routes } from './app.routes';
 
-
+// Configuración global de la aplicación standalone
 export const appConfig: ApplicationConfig = {
   providers: [
+    // Define la estrategia de reutilización de rutas de Ionic
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    
+    // Optimiza la detección de cambios agrupando eventos
     provideZoneChangeDetection({ eventCoalescing: true }),
+    
+    // Configura el sistema de rutas
     provideRouter(routes),
-    provideIonicAngular(),
-    importProvidersFrom(
-      AngularFireModule.initializeApp(environment.firebaseConfig),
-      AngularFireAuthModule,
-      AngularFirestoreModule
-    )
+    
+    // Provee todos los servicios de Ionic (ModalController, AlertController, etc.)
+    provideIonicAngular()
   ]
 };

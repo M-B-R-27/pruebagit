@@ -1,0 +1,34 @@
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+
+  .large-avatar {
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--ion-color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    .empty-icon {
+      font-size: 150px;
+      color: var(--ion-color-medium);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .change-photo-btn {
+    --border-radius: 25px;
+    margin: 0;
+    width: 80%;
+    max-width: 250px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,67 @@
+// ✅ Contenedor para posicionar el avatar y botón juntos
+.avatar-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px auto;
+}
+
+ion-avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+ion-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+// ✅ Botón posicionado sobre el avatar
+.photo-btn {
+    position: absolute;
+    bottom: -5px; // ✅ Separado 5px del borde
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 10;
+    --background: var(--ion-color-primary);
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-icon {
+    width: 35px;
+    height: 35px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.clasificacion {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    background-color: var(--ion-color-primary);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+ion-item {
+    --padding-top: 15px;
+}
+
+.empty-icon {
+    width: 100%;
+    height: 100%;
+    font-size: 180px;
+    opacity: 30%;
+}
